@@ -11,6 +11,10 @@ public class CrearNotificacionApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
+		CrearNotificacionApplication c = new CrearNotificacionApplication();
+		
+		c.notificar();
 	}
 
 }
