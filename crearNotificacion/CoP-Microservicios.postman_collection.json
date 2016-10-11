@@ -1,0 +1,145 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CoP Microservicios",
+		"_postman_id": "640182b5-7a03-0058-af25-c4b13e47a292",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crearNotificacion",
+			"request": {
+				"url": "http://localhost:8080/notification/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idType\": \"92\",\r\n  \"title\": \"Saldo inferior\",\r\n  \"description\": \"Saldo inferior a 1000\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"url": "http://localhost:8080/notification/findAll",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"url": "http://localhost:8080/notification/getById",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "57fcea5d909dc8331c39915f",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"url": "http://localhost:8080/notification/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"57fbbbb94dde82227420dc19\",\n    \"idType\": \"92\",\n    \"title\": \"Saldo inferior\",\n    \"description\": \"Saldo inferior a 5000\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"url": "http://localhost:8080/notification/deleteById",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "57fbbbb94dde82227420dc19",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAll",
+			"request": {
+				"url": "http://localhost:8080/notification/deleteAll",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
