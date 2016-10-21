@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>crearNotificacion</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project for Spring Boot: crearNotificacion</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
