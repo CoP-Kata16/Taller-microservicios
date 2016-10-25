@@ -3,9 +3,10 @@ server:
 spring:
   application:
       name:eureka
+logging:
+    level:
+        org.springframework.web: 'ERROR'
 eureka:
-  #region: default
-  #vipAdress: my-server
   server:
     enableSelfPreservation: false
   instance:
