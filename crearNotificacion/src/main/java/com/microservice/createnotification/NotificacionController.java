@@ -53,7 +53,7 @@ public class NotificacionController
 	}
 
 
-	@RequestMapping("findAll")
+	@RequestMapping("/findAll")
 	public List<Notification> getAllNotifications()
 	{
 		return notificationRepository.findAll();

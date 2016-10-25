@@ -7,3 +7,4 @@ eureka:
    ServiceUrl:
       defaultZone: http://localhost:8761/eureka/
  vipAddress: crearnotificacion
+ name: crearnotificacion
