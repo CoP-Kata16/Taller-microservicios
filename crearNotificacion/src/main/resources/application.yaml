@@ -1,0 +1,9 @@
+eureka:
+ instance:
+   vipAddress: crearnotificacion
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+ client:
+   ServiceUrl:
+      defaultZone: http://localhost:8761/eureka/
+ vipAddress: crearnotificacion
