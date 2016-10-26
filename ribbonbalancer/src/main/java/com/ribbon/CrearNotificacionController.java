@@ -58,4 +58,10 @@ public class CrearNotificacionController
 		return notificacionController.save(notification);
 	}
 	
+	@RequestMapping("/findByReferenceUser")
+	public List<Notification> findByReferenceUser(@RequestParam(value = "reference") String reference, @RequestParam(value = "user") String user)
+	{
+		return notificacionController.findByReferenceUser(reference, user);
+	}	
+	
 }

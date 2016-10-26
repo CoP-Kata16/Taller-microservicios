@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.microservice.createnotification.pojo.Configuracion;
+import com.microservice.createnotification.pojo.FilterConfiguration;
 
 @FeignClient("configuracionusuarios")
 public interface IConfiguracionUsuarios {
@@ -30,5 +31,8 @@ public interface IConfiguracionUsuarios {
 	
 	@RequestMapping(value = "/configuration/update", method = RequestMethod.POST)
 	public Configuracion save(@RequestBody Configuracion configuracion);
+
+	@RequestMapping(value = "/configuration/findByReferenceUser", method = RequestMethod.POST)
+	public Configuracion findByReferenceUser(@RequestBody FilterConfiguration filtro);
 	
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservice.createnotification.pojo.Configuracion;
+import com.microservice.createnotification.pojo.FilterConfiguration;
 
 @RestController
 @RequestMapping("/ribboncfg")
@@ -56,6 +57,12 @@ public class ConfiguracionUsuariosController {
 	public Configuracion save(@RequestBody Configuracion configuracion)
 	{
 		return iConfiguracionUsuarios.save(configuracion);
+	}
+	
+	@RequestMapping("/findByReferenceUser")
+	public Configuracion findByTypeReferenceUser(@RequestBody FilterConfiguration filtro)
+	{
+		return iConfiguracionUsuarios.findByReferenceUser(filtro);
 	}
 	
 }

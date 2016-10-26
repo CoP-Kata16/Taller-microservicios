@@ -59,6 +59,11 @@ public class NotificacionController
 		return notificationRepository.findAll();
 	}
 
+	@RequestMapping("/findByReferenceUser")
+	public List<Notification> findByReferenceUser(@RequestParam(value = "reference") String reference, @RequestParam(value = "user") String user)
+	{
+		return notificationRepository.findByReferenceUser(reference, user);
+	}
 
 	@RequestMapping("/update")
 	public Notification save(@RequestBody Notification notification)

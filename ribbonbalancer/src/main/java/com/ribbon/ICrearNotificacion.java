@@ -31,5 +31,8 @@ public interface ICrearNotificacion
 	
 	@RequestMapping(value = "/notification/update", method = RequestMethod.POST)
 	public Notification save(@RequestBody Notification notification);
+
+	@RequestMapping(value = "/notification/findByReferenceUser", method = RequestMethod.POST)
+	public List<Notification> findByReferenceUser(@RequestParam(value = "reference") String reference, @RequestParam(value = "user") String user);
 	
 }

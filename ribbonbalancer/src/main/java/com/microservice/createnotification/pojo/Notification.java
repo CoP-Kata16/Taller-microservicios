@@ -15,7 +15,11 @@ public class Notification
 	private String title;
 
 	private String description;
-
+	
+	private String reference;
+	
+	private String user;
+	
 
 	/**
 	 * @return the id
@@ -89,17 +93,33 @@ public class Notification
 	}
 
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		StringBuilder builder = new StringBuilder();
-		builder.append("Notification [id=").append(id).append(", idType=").append(idType).append(", title=").append(title).append(", description=").append(description).append("]");
-		return builder.toString();
+	public String getReference() {
+		return reference;
 	}
+
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+
+	public String getUser() {
+		return user;
+	}
+
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Notification [id=" + id + ", idType=" + idType + ", title=" + title + ", description=" + description
+				+ ", reference=" + reference + ", user=" + user + "]";
+	}
+
+
 
 
 }
