@@ -1,0 +1,16 @@
+server:
+    port: 8093
+spring:
+    application:
+        name: configuracionusuarios
+eureka:
+ instance:
+   vipAddress: configuracionusuarios
+   virtualHostName: configuracionusuarios
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+# client:
+#   ServiceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+# vipAddress: configuracionusuarios
+# name: configuracionusuarios
