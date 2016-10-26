@@ -9,53 +9,53 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.createnotification.pojo.Notification;
-
+import com.microservice.createnotification.pojo.Configuracion;
 
 @RestController
-@RequestMapping("/ribbonnot")
-public class CrearNotificacionController 
-{
+@RequestMapping("/ribboncfg")
+public class ConfiguracionUsuariosController {
 
 	@Autowired
-	private ICrearNotificacion notificacionController;
+	private IConfiguracionUsuarios iConfiguracionUsuarios; 
 	
 	
-	
-	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
-	public List<Notification> getAllNotifications()
-	{
-		return notificacionController.getAllNotifications();
-	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public Notification create(@RequestBody Notification notification)
+	public Configuracion create(@RequestBody Configuracion configuracion)
 	{
-		return notificacionController.insert(notification);
+		return iConfiguracionUsuarios.insert(configuracion);
 	}
 	
 	@RequestMapping(value = "/deleteAll", method = RequestMethod.POST)
 	public void deleteAll()
 	{
-		notificacionController.deleteAll();
+		iConfiguracionUsuarios.deleteAll();
 	}
-
+	
 	@RequestMapping(value = "/deleteById", method = RequestMethod.POST)
 	public void deleteById(@RequestParam(value = "id") String id)
 	{
-		notificacionController.delete(id);
+		iConfiguracionUsuarios.delete(id);
+	}
+	
+	@RequestMapping(value = "/getById", method = RequestMethod.POST)
+	public Configuracion getById(@RequestParam(value = "id") String id)
+	{
+		return iConfiguracionUsuarios.findOne(id);
 	}
 
-	@RequestMapping(value = "/getById", method = RequestMethod.POST)
-	public Notification getById(@RequestParam(value = "id") String id)
+
+	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
+	public List<Configuracion> getAllNotifications()
 	{
-		return notificacionController.findOne(id);
+		return iConfiguracionUsuarios.getAllNotifications();
 	}
+
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public Notification save(@RequestBody Notification notification)
+	public Configuracion save(@RequestBody Configuracion configuracion)
 	{
-		return notificacionController.save(notification);
+		return iConfiguracionUsuarios.save(configuracion);
 	}
 	
 }

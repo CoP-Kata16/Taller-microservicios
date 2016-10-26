@@ -11,8 +11,3 @@ crearnotificacion:
    ribbon:
        DeploymentContextBasedVipAddresses: crearnotificacion
        NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
-#eureka:
-#    client:
-#       ServiceUrl:
-#           defaultZone: http://localhost:8761/eureka/
-
