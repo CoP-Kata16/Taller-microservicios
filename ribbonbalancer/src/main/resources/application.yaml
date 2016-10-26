@@ -3,16 +3,16 @@ server:
 spring:
     application:
         name: resthomecontrollerribbon
-#configuracionusuarios:
-#   ribbon:
-#       DeploymentContextBasedVipAddresses: configuracionusuarios
-#       NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+configuracionusuarios:
+   ribbon:
+       DeploymentContextBasedVipAddresses: configuracionusuarios
+       NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
 crearnotificacion:
    ribbon:
        DeploymentContextBasedVipAddresses: crearnotificacion
        NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
-eureka:
-    client:
-       ServiceUrl:
-           defaultZone: http://localhost:8761/eureka/
+#eureka:
+#    client:
+#       ServiceUrl:
+#           defaultZone: http://localhost:8761/eureka/
 

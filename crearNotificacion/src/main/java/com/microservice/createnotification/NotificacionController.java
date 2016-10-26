@@ -22,7 +22,7 @@ public class NotificacionController
 	NotificationRepository notificationRepository;
 
 
-	@RequestMapping("create")
+	@RequestMapping("/create")
 	public Notification create(@RequestBody Notification notification)
 	{
 		return notificationRepository.insert(notification);
@@ -30,7 +30,7 @@ public class NotificacionController
 	}
 
 
-	@RequestMapping("deleteAll")
+	@RequestMapping("/deleteAll")
 	public void deleteAll()
 	{
 
@@ -39,14 +39,14 @@ public class NotificacionController
 	}
 
 
-	@RequestMapping("deleteById")
+	@RequestMapping("/deleteById")
 	public void deleteById(@RequestParam(value = "id") String id)
 	{
 		notificationRepository.delete(id);
 	}
 
 
-	@RequestMapping("getById")
+	@RequestMapping("/getById")
 	public Notification getById(@RequestParam(value = "id") String id)
 	{
 		return notificationRepository.findOne(id);
@@ -60,7 +60,7 @@ public class NotificacionController
 	}
 
 
-	@RequestMapping("update")
+	@RequestMapping("/update")
 	public Notification save(@RequestBody Notification notification)
 	{
 		return notificationRepository.save(notification);

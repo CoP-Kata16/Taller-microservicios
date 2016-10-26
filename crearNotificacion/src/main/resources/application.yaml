@@ -1,10 +1,16 @@
+server:
+    port: 8090
+spring:
+    application:
+        name: crearnotificacion
 eureka:
  instance:
    vipAddress: crearnotificacion
+   virtualHostName: crearnotificacion
    leaseRenewalIntervalInSeconds: 1
    leaseExpirationDurationInSeconds: 2
- client:
-   ServiceUrl:
-      defaultZone: http://localhost:8761/eureka/
- vipAddress: crearnotificacion
- name: crearnotificacion
+# client:
+#   ServiceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+# vipAddress: crearnotificacion
+# name: crearnotificacion
