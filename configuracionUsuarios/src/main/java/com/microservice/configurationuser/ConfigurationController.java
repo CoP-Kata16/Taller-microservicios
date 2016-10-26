@@ -18,39 +18,39 @@ public class ConfigurationController {
 	@Autowired
 	ConfigurationRepository configurationRepository;
 	
-	@RequestMapping("create")
+	@RequestMapping("/create")
 	public Configuracion create(@RequestBody Configuracion configuracion)
 	{
 		return configurationRepository.insert(configuracion);
 	}
 	
-	@RequestMapping("deleteAll")
+	@RequestMapping("/deleteAll")
 	public void deleteAll()
 	{
 		configurationRepository.deleteAll();
 	}
 	
-	@RequestMapping("deleteById")
+	@RequestMapping("/deleteById")
 	public void deleteById(@RequestParam(value = "id") String id)
 	{
 		configurationRepository.delete(id);
 	}
 	
-	@RequestMapping("getById")
+	@RequestMapping("/getById")
 	public Configuracion getById(@RequestParam(value = "id") String id)
 	{
 		return configurationRepository.findOne(id);
 	}
 
 
-	@RequestMapping("findAll")
+	@RequestMapping("/findAll")
 	public List<Configuracion> getAllNotifications()
 	{
 		return configurationRepository.findAll();
 	}
 
 
-	@RequestMapping("update")
+	@RequestMapping("/update")
 	public Configuracion save(@RequestBody Configuracion configuracion)
 	{
 		return configurationRepository.save(configuracion);
