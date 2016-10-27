@@ -1,7 +1,12 @@
+
 #Requisitos:
-  git
+  
+  GIT
+  
   JDK 1.8
+  
   maven 3
+  
   eclipse u otro IDE
 
 # Taller-microservicios
