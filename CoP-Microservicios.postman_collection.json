@@ -408,7 +408,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"referencia\": \"20075243\",\r\n    \"usuario\": \"SGAPNM00\",\r\n    \"tipoAlerta\": 47\r\n}\r\n"
+					"raw": "{\r\n    \"reference\": \"20072230\",\r\n    \"user\": \"USER1\",\r\n    \"tipoAlerta\": 47\r\n}\r\n"
 				},
 				"description": ""
 			},
@@ -428,7 +428,47 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "POST"
+					"raw": "{\r\n    \"reference\": \"20072230\",\r\n    \"user\": \"USER1\"\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Zuul - Configuracion update",
+			"request": {
+				"url": "http://localhost:8888/mizuul/ribboncfg/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"referencia\": \"20072230\",\n  \"usuario\": \"USER1\",\n  \"tipoAlerta\": 47,\n  \"activa\": false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Zuul - Notification create",
+			"request": {
+				"url": "http://localhost:8888/mizuul/ribbonnot/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idType\": \"47\",\r\n  \"title\": \"OPR\",\r\n  \"description\": \"Orden de pago recibida\",\r\n  \"reference\": \"20072230\",\r\n  \"user\": \"USER1\"\r\n}\r\n"
 				},
 				"description": ""
 			},
