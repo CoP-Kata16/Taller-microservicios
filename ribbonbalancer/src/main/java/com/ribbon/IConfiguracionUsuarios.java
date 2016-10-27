@@ -23,16 +23,16 @@ public interface IConfiguracionUsuarios {
 	@RequestMapping(value = "/configuration/deleteById", method = RequestMethod.POST)
 	public void delete(@RequestParam(value = "id") String id);
 	
-	@RequestMapping(value = "/configuration/getById", method = RequestMethod.GET)
+	@RequestMapping(value = "/configuration/getById", method = RequestMethod.POST)
 	public Configuracion findOne(@RequestParam(value = "id") String id);
 	
-	@RequestMapping(value = "/configuration/findAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/configuration/findAll", method = RequestMethod.POST)
 	public List<Configuracion> getAllNotifications();
 	
 	@RequestMapping(value = "/configuration/update", method = RequestMethod.POST)
 	public Configuracion save(@RequestBody Configuracion configuracion);
 
-	@RequestMapping(value = "/configuration/findByReferenceUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/configuration/findByReferenceUser", method = RequestMethod.POST)
 	public Configuracion findByReferenceUser(@RequestBody FilterConfiguration filtro);
 	
 }

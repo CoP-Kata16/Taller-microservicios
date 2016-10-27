@@ -15,7 +15,7 @@ import com.kata16.microservice.pojo.Notification;
 public interface ICrearNotificacion 
 {
 	
-	@RequestMapping(value = "/notification/findAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/notification/findAll", method = RequestMethod.POST)
 	public List<Notification> getAllNotifications();
 	
 	@RequestMapping(value = "/notification/create", method = RequestMethod.POST)
@@ -27,13 +27,13 @@ public interface ICrearNotificacion
 	@RequestMapping(value = "/notification/deleteById", method = RequestMethod.POST)
 	public void delete(@RequestParam(value = "id") String id);
 	
-	@RequestMapping(value = "/notification/getById", method = RequestMethod.GET)
+	@RequestMapping(value = "/notification/getById", method = RequestMethod.POST)
 	public Notification findOne(@RequestParam(value = "id") String id);
 	
 	@RequestMapping(value = "/notification/update", method = RequestMethod.POST)
 	public Notification save(@RequestBody Notification notification);
 
-	@RequestMapping(value = "/notification/findByReferenceUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/notification/findByReferenceUser", method = RequestMethod.POST)
 	public List<Notification> findByReferenceUser(@RequestBody FilterReferenceUser filterReferenceUser);
 	
 	 

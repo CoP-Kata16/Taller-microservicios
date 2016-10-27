@@ -41,14 +41,14 @@ public class ConfiguracionUsuariosController {
 		iConfiguracionUsuarios.delete(id);
 	}
 	
-	@RequestMapping(value = "/getById", method = RequestMethod.GET)
+	@RequestMapping(value = "/getById", method = RequestMethod.POST)
 	public Configuracion getById(@RequestParam(value = "id") String id)
 	{
 		return iConfiguracionUsuarios.findOne(id);
 	}
 
 
-	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
 	public List<Configuracion> getAllNotifications()
 	{
 		return iConfiguracionUsuarios.getAllNotifications();
@@ -62,7 +62,7 @@ public class ConfiguracionUsuariosController {
 	}
 	
 	
-	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.POST)
 	public Configuracion findByTypeReferenceUser(@RequestBody FilterConfiguration filtro)
 	{
 		return iConfiguracionUsuarios.findByReferenceUser(filtro);

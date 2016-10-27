@@ -23,7 +23,7 @@ public class CrearNotificacionController
 	
 	
 	
-	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
 	public List<Notification> getAllNotifications()
 	{
 		return notificacionController.getAllNotifications();
@@ -47,7 +47,7 @@ public class CrearNotificacionController
 		notificacionController.delete(id);
 	}
 
-	@RequestMapping(value = "/getById", method = RequestMethod.GET)
+	@RequestMapping(value = "/getById", method = RequestMethod.POST)
 	public Notification getById(@RequestParam(value = "id") String id)
 	{
 		return notificacionController.findOne(id);
@@ -59,7 +59,7 @@ public class CrearNotificacionController
 		return notificacionController.save(notification);
 	}
 	
-	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.POST)
 	public List<Notification> findByReferenceUser(@RequestBody FilterReferenceUser filterReferenceUser)
 	{
 		return notificacionController.findByReferenceUser(filterReferenceUser);
