@@ -1,5 +1,5 @@
 
-#Requisitos:
+# Requisitos Taller-microservicios:
   
   GIT
   
@@ -9,7 +9,7 @@
   
   eclipse u otro IDE
 
-# Taller-microservicios
+# Bajarse el código de la siguiente URL
 
   git clone https://github.com/CoP-Kata16/Taller-microservicios.git
 
