@@ -9,13 +9,12 @@
 	<packaging>jar</packaging>
 
 	<name>crearNotificacion</name>
-	<description>Demo project for Spring Boot: crearNotificacion</description>
+	<description>Microservicio crearNotificacion</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+    	<groupId>com.kata16.microservice</groupId>
+    	<artifactId>pom-padre_kata16</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>	
 	</parent>
 
 	<properties>

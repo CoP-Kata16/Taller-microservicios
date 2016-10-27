@@ -9,13 +9,12 @@
 	<packaging>jar</packaging>
 
 	<name>ribbonbalancer</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Ribbon balanceador desde cliente</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+    	<groupId>com.kata16.microservice</groupId>
+    	<artifactId>pom-padre_kata16</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>	
 	</parent>
 
 	<properties>
