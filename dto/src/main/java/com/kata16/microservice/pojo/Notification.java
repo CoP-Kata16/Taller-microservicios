@@ -1,8 +1,6 @@
 package com.kata16.microservice.pojo;
 
 
-import java.util.Date;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.data.annotation.Id;
