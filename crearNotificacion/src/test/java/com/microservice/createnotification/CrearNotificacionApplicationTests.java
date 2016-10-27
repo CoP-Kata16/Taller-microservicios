@@ -26,7 +26,9 @@ public class CrearNotificacionApplicationTests
 		final String idType = "90";
 		final String title = "Cargo superior tarjeta";
 		final String descripcion = "Cargo superior en tarjeta con importe de 1.000€ superior al que tiene configurado 900€.";
-		Notification notification = createNewNotification(idType, title, descripcion);
+		final String reference = "20072230";
+		final String user = "USUARIO1";
+		Notification notification = createNewNotification(idType, title, descripcion, reference, user);
 		Notification notificationInerted = notificacionController.create(notification);
 		System.out.println("Notificaion insertada: " + notificationInerted.toString());
 		assertNotNull(notificationInerted);
@@ -34,14 +36,15 @@ public class CrearNotificacionApplicationTests
 	}
 
 
-	private Notification createNewNotification(String idType, String title, String description)
+	private Notification createNewNotification(String idType, String title, String description, String reference, String user)
 	{
 		Notification notification = new Notification();
 
 		notification.setIdType(idType);
 		notification.setTitle(title);
 		notification.setDescription(description);
-
+		notification.setUser(user);
+		notification.setReference(reference);
 		return notification;
 	}
 
