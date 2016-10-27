@@ -3,6 +3,8 @@ server:
 spring:
     application:
         name: configuracionusuarios
+    data:
+        mongodb.uri: mongodb://w963363D.ad.bbva.com:27017/dbTaller
 eureka:
  instance:
    vipAddress: configuracionusuarios
