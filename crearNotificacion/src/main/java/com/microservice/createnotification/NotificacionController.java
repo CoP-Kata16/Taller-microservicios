@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.createnotification.pojo.Notification;
+import com.kata16.microservice.pojo.FilterReferenceUser;
+import com.kata16.microservice.pojo.Notification;
 import com.microservice.createnotification.repository.NotificationRepository;
 
 
@@ -60,9 +61,10 @@ public class NotificacionController
 	}
 
 	@RequestMapping("/findByReferenceUser")
-	public List<Notification> findByReferenceUser(@RequestParam(value = "reference") String reference, @RequestParam(value = "user") String user)
+	public List<Notification> findByReferenceUser(@RequestBody FilterReferenceUser filterReferenceUser) 
+	
 	{
-		return notificationRepository.findByReferenceUser(reference, user);
+		return notificationRepository.findByReferenceUser(filterReferenceUser.getReference(), filterReferenceUser.getUser());
 	}
 
 	@RequestMapping("/update")

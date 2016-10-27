@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.microservice.createnotification.pojo.Notification;
+import com.kata16.microservice.pojo.Notification;
 
 
 @RunWith(SpringRunner.class)

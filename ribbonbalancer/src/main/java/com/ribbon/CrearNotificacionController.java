@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.createnotification.pojo.Notification;
+import com.kata16.microservice.pojo.FilterReferenceUser;
+import com.kata16.microservice.pojo.Notification;
 
 
 @RestController
@@ -22,7 +23,7 @@ public class CrearNotificacionController
 	
 	
 	
-	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
 	public List<Notification> getAllNotifications()
 	{
 		return notificacionController.getAllNotifications();
@@ -46,7 +47,7 @@ public class CrearNotificacionController
 		notificacionController.delete(id);
 	}
 
-	@RequestMapping(value = "/getById", method = RequestMethod.POST)
+	@RequestMapping(value = "/getById", method = RequestMethod.GET)
 	public Notification getById(@RequestParam(value = "id") String id)
 	{
 		return notificacionController.findOne(id);
@@ -58,10 +59,11 @@ public class CrearNotificacionController
 		return notificacionController.save(notification);
 	}
 	
-	@RequestMapping("/findByReferenceUser")
-	public List<Notification> findByReferenceUser(@RequestParam(value = "reference") String reference, @RequestParam(value = "user") String user)
+	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.GET)
+	public List<Notification> findByReferenceUser(@RequestBody FilterReferenceUser filterReferenceUser)
 	{
-		return notificacionController.findByReferenceUser(reference, user);
+		return notificacionController.findByReferenceUser(filterReferenceUser);
 	}	
+	
 	
 }

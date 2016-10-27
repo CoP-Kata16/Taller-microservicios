@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.createnotification.pojo.Configuracion;
-import com.microservice.createnotification.pojo.FilterConfiguration;
+import com.kata16.microservice.pojo.Configuracion;
+import com.kata16.microservice.pojo.FilterConfiguration;
+
+
 
 @RestController
 @RequestMapping("/ribboncfg")
@@ -39,14 +41,14 @@ public class ConfiguracionUsuariosController {
 		iConfiguracionUsuarios.delete(id);
 	}
 	
-	@RequestMapping(value = "/getById", method = RequestMethod.POST)
+	@RequestMapping(value = "/getById", method = RequestMethod.GET)
 	public Configuracion getById(@RequestParam(value = "id") String id)
 	{
 		return iConfiguracionUsuarios.findOne(id);
 	}
 
 
-	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
+	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
 	public List<Configuracion> getAllNotifications()
 	{
 		return iConfiguracionUsuarios.getAllNotifications();
@@ -59,7 +61,8 @@ public class ConfiguracionUsuariosController {
 		return iConfiguracionUsuarios.save(configuracion);
 	}
 	
-	@RequestMapping("/findByReferenceUser")
+	
+	@RequestMapping(value = "/findByReferenceUser", method = RequestMethod.GET)
 	public Configuracion findByTypeReferenceUser(@RequestBody FilterConfiguration filtro)
 	{
 		return iConfiguracionUsuarios.findByReferenceUser(filtro);

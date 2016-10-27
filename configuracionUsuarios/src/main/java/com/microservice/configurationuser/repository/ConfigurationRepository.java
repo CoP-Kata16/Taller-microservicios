@@ -3,7 +3,7 @@ package com.microservice.configurationuser.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.microservice.configurationuser.pojo.Configuracion;
+import com.kata16.microservice.pojo.Configuracion;
 
 
 public interface ConfigurationRepository extends MongoRepository<Configuracion, String>

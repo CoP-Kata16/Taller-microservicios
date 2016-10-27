@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.microservice.createnotification.pojo.Configuracion;
-import com.microservice.createnotification.pojo.FilterConfiguration;
+import com.kata16.microservice.pojo.Configuracion;
+import com.kata16.microservice.pojo.FilterConfiguration;
 
 @FeignClient("configuracionusuarios")
 public interface IConfiguracionUsuarios {
@@ -23,16 +23,16 @@ public interface IConfiguracionUsuarios {
 	@RequestMapping(value = "/configuration/deleteById", method = RequestMethod.POST)
 	public void delete(@RequestParam(value = "id") String id);
 	
-	@RequestMapping(value = "/configuration/getById", method = RequestMethod.POST)
+	@RequestMapping(value = "/configuration/getById", method = RequestMethod.GET)
 	public Configuracion findOne(@RequestParam(value = "id") String id);
 	
-	@RequestMapping(value = "/configuration/findAll", method = RequestMethod.POST)
+	@RequestMapping(value = "/configuration/findAll", method = RequestMethod.GET)
 	public List<Configuracion> getAllNotifications();
 	
 	@RequestMapping(value = "/configuration/update", method = RequestMethod.POST)
 	public Configuracion save(@RequestBody Configuracion configuracion);
 
-	@RequestMapping(value = "/configuration/findByReferenceUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/configuration/findByReferenceUser", method = RequestMethod.GET)
 	public Configuracion findByReferenceUser(@RequestBody FilterConfiguration filtro);
 	
 }

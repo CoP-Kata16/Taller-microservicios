@@ -1,10 +1,13 @@
-package com.microservice.createnotification.pojo;
+package com.kata16.microservice.pojo;
 
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.springframework.data.annotation.Id;
 
 @XmlRootElement(name = "configuracion")
 public class Configuracion {
 
+	@Id
 	private String id;
 	
 	private String referencia;

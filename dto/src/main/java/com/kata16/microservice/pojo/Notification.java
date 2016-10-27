@@ -1,13 +1,17 @@
-package com.microservice.createnotification.pojo;
+package com.kata16.microservice.pojo;
 
+
+import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.springframework.data.annotation.Id;
 
 
 @XmlRootElement(name = "notification")
 public class Notification
 {
-
+	@Id
 	private String id;
 
 	private String idType;
@@ -15,11 +19,13 @@ public class Notification
 	private String title;
 
 	private String description;
-	
+
 	private String reference;
 	
 	private String user;
 	
+
+
 
 	/**
 	 * @return the id
@@ -93,26 +99,41 @@ public class Notification
 	}
 
 
+	/**
+	 * @return the reference
+	 */
 	public String getReference() {
 		return reference;
 	}
 
 
+	/**
+	 * @param reference the reference to set
+	 */
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
 
 
+	/**
+	 * @return the user
+	 */
 	public String getUser() {
 		return user;
 	}
 
 
+	/**
+	 * @param user the user to set
+	 */
 	public void setUser(String user) {
 		this.user = user;
 	}
 
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "Notification [id=" + id + ", idType=" + idType + ", title=" + title + ", description=" + description
@@ -120,6 +141,7 @@ public class Notification
 	}
 
 
-
+	
+	
 
 }

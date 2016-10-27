@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.microservice.createnotification.pojo.Notification;
+import com.kata16.microservice.pojo.Notification;
 
 
 public interface NotificationRepository extends MongoRepository<Notification, String>

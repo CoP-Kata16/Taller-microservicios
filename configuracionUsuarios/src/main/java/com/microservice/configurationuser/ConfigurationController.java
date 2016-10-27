@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.microservice.configurationuser.pojo.Configuracion;
-import com.microservice.configurationuser.pojo.FilterConfiguration;
+import com.kata16.microservice.pojo.PojoUtil;
+import com.kata16.microservice.pojo.Configuracion;
+import com.kata16.microservice.pojo.FilterConfiguration;
 import com.microservice.configurationuser.repository.ConfigurationRepository;
 
 @RestController
@@ -22,7 +22,7 @@ public class ConfigurationController {
 	@RequestMapping("/create")
 	public Configuracion create(@RequestBody Configuracion configuracion)
 	{
-		Configuracion cfg = this.findByReferenceUser(createFilterConfiguration(configuracion));
+		Configuracion cfg = this.findByReferenceUser(PojoUtil.createFilterConfiguration(configuracion));
 		
 		if (cfg == null) {
 			return configurationRepository.insert(configuracion);
@@ -60,7 +60,7 @@ public class ConfigurationController {
 	@RequestMapping("/update")
 	public Configuracion save(@RequestBody Configuracion configuracion)
 	{
-		Configuracion cfg = this.findByReferenceUser(createFilterConfiguration(configuracion));
+		Configuracion cfg = this.findByReferenceUser(PojoUtil.createFilterConfiguration(configuracion));
 		
 		if (cfg != null) {
 			cfg.setActiva(configuracion.getActiva());
@@ -74,18 +74,12 @@ public class ConfigurationController {
 	public Configuracion findByReferenceUser(@RequestBody FilterConfiguration filtro) {
 		try {
 			return configurationRepository.findByReferenceUser(filtro.getTipoAlerta(), 
-					filtro.getReferencia(), filtro.getUsuario());
+					filtro.getReference(), filtro.getUser());
 		} catch (Exception e) {
 			return new Configuracion();
 		}
 	}
 	
-	private FilterConfiguration createFilterConfiguration( Configuracion configuracion) {
-		FilterConfiguration filter = new FilterConfiguration();
-		filter.setReferencia(configuracion.getReferencia());
-		filter.setTipoAlerta(configuracion.getTipoAlerta());
-		filter.setUsuario(configuracion.getUsuario());
-		return filter;
-	}
+	
 	
 }
