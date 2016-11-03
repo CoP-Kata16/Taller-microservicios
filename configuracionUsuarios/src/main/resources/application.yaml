@@ -11,3 +11,6 @@ eureka:
    virtualHostName: configuracionusuarios
    leaseRenewalIntervalInSeconds: 1
    leaseExpirationDurationInSeconds: 2
+ client:
+    ServiceUrl:
+       defaultZone: http://localhost:8762/eureka/

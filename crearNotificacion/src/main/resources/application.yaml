@@ -11,3 +11,10 @@ eureka:
    virtualHostName: crearnotificacion
    leaseRenewalIntervalInSeconds: 1
    leaseExpirationDurationInSeconds: 2
+ client:
+    ServiceUrl:
+       defaultZone: http://localhost:8762/eureka/
+turbine:
+  aggregator:
+    clusterConfig: CREARNOTIFICACION-HYSTRIX-AGGREGATE-1
+  appConfig: CREARNOTIFICACION-HYSTRIX-AGGREGATE-1

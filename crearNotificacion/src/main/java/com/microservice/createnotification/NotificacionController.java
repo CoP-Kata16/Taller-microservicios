@@ -4,6 +4,7 @@ package com.microservice.createnotification;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kata16.microservice.pojo.FilterReferenceUser;
 import com.kata16.microservice.pojo.Notification;
 import com.microservice.createnotification.repository.NotificationRepository;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-
+@EnableCircuitBreaker
 @RestController
 @RequestMapping("/notification")
 public class NotificacionController
@@ -24,12 +26,21 @@ public class NotificacionController
 
 
 	@RequestMapping("/create")
+	@HystrixCommand(fallbackMethod = "createNotificationFailed")
 	public Notification create(@RequestBody Notification notification)
 	{
 		return notificationRepository.insert(notification);
 
 	}
 
+	public Notification createNotificationFailed(Notification notification)
+	{
+		notification.setDescription("***ERROR: Notificacion NO CREADA****");
+		
+		
+		return notification;
+
+	}
 
 	@RequestMapping("/deleteAll")
 	public void deleteAll()

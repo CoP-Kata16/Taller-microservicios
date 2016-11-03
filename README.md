@@ -39,7 +39,22 @@
   
     Completar configuracion de zuul
     
+# Notas:
 
+	URL dashboard
+
+		http://localhost:8082/hystrix (puerto del crearNotificacion)
+	
+	URL a monitorizar:
+	
+		http://localhost:8082/hystrix.stream
+		
+	Turbine (agrega informacion de todas las intanciaciones de una aplicación en un cluster):
+	
+		https://github.com/spring-cloud-samples/turbine
+		
+		http://www.java-allandsundry.com/2016/01/spring-cloud-with-turbine.html
+		
   
   
 
