@@ -4,7 +4,7 @@ spring:
     application:
         name: configuracionusuarios
     data:
-        mongodb.uri: mongodb://w963363D.ad.bbva.com:27017/dbTaller
+        mongodb.uri: mongodb://user:password@ds041506.mlab.com:41506/microservicios       
 eureka:
  instance:
    vipAddress: configuracionusuarios

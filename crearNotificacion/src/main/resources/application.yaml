@@ -4,7 +4,7 @@ spring:
     application:
         name: crearnotificacion
     data:
-        mongodb.uri: mongodb://w963363D.ad.bbva.com:27017/dbTaller        
+        mongodb.uri: mongodb://uesr:password@ds041506.mlab.com:41506/microservicios       
 eureka:
  instance:
    vipAddress: crearnotificacion

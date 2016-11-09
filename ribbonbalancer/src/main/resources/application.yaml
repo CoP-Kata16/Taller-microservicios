@@ -11,3 +11,13 @@ crearnotificacion:
    ribbon:
        DeploymentContextBasedVipAddresses: crearnotificacion
        NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+eureka:
+ instance:
+   vipAddress: resthomecontrollerribbon
+   virtualHostName: resthomecontrollerribbon
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+ client:
+    ServiceUrl:
+       defaultZone: http://localhost:8762/eureka/
+  

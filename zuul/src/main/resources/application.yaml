@@ -8,4 +8,12 @@ zuul:
     zuul:
       path: /mizuul/**
       serviceId: resthomecontrollerribbon
-
+eureka:
+ instance:
+   vipAddress: notificationZuul
+   virtualHostName: notificationZuul
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+ client:
+    ServiceUrl:
+       defaultZone: http://localhost:8762/eureka/
